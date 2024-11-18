@@ -1,95 +1,109 @@
+/* ------------------------------ */
+/* Global Styles */
+/* ------------------------------ */
 body {
-
-color:rgba(0, 0, 0, 0.5);
-background-color: rgb(255, 255, 255);
-
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(255, 255, 255);
 }
 
+/* ------------------------------ */
+/* Container Styles */
+/* ------------------------------ */
 .widecontainer {
-  .widecontainer {
-    position: relative;
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-    opacity: 0.3; }
-}
- 
-  /* position: relative;
+  position: relative;
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
-  opacity: .5; } */
+  opacity: 0.3;
+}
 
+/* ------------------------------ */
+/* Typography Styles */
+/* ------------------------------ */
 a:link {
-    color: #a3a3a3;
-    text-decoration: none;
+  color: #a3a3a3;
+  text-decoration: none;
 }
 
 a:visited {
-    text-decoration: none;
-    color: #a3a3a3;
+  color: #a3a3a3;
+  text-decoration: none;
 }
+
 a:hover {
-    text-decoration: none;
-    color: rgb(0, 187, 255);
+  color: rgb(0, 187, 255);
+  text-decoration: none;
 }
+
 a:active {
-    text-decoration: none;
-    color: #BB772D;
+  color: #BB772D;
+  text-decoration: none;
 }
 
 td, th {
-    color: #A0522D;
+  color: #A0522D;
 }
 
-
-
-.nav_pad{
-  padding-top:40px;
+ul.disc {
+  list-style: disc;
+  margin-left: 15px;
 }
-.section{
+
+/* ------------------------------ */
+/* Navigation Bar Styles */
+/* ------------------------------ */
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.nav_pad {
+  padding-top: 40px;
+}
+
+/* ------------------------------ */
+/* Section Padding Styles */
+/* ------------------------------ */
+.section {
   padding-top: 30px;
-  padding-bottom:40px;
-
+  padding-bottom: 40px;
 }
 
-.mid-section{
+.mid-section {
   padding-top: 120px;
-  padding-bottom:40px;
+  padding-bottom: 40px;
+}
 
+/* ------------------------------ */
+/* Box and Background Styles */
+/* ------------------------------ */
+.statement_text {
+  background-color: #eee;
+  padding: 8px;
+  margin-top: 20px;
+  border: 1px dashed black;
+}
+
+.stripe {
+  background-color: #DADADA;
 }
 
 .key {
-  font-weight:bold;
-
-
-}
-.stripe {
- background-color: #DADADA;
+  font-weight: bold;
 }
 
-
-ul.disc{
-  list-style: disc;
-  margin-left: 15px
+/* ------------------------------ */
+/* Slider Styles */
+/* ------------------------------ */
+.slider-container {
+  overflow: hidden;
+  position: relative;
 }
 
-
-.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    padding-right:10px;
-}
-
-
-.statement_text {
-
-    background-color: #eee;
-    padding: 8px;
-    margin-top: 20px;
-    border: 1px dashed black;
+.slider img {
+  width: 100%;
+  display: none;
 }

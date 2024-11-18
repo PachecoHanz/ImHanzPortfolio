@@ -1,112 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Artist Portfolio</title>
 
-  <!-- Basic Page Needs –––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>art101</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile Specific Metas ––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT ––––––––––––––––––––––––––––––––––––––––------–––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS & JS –––––––––––––––––––––––––––––––––––––––––––––––––– -->  
-  <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>                   <script type="text/javascript" src="css/overlaypopup.js"> </script>  
+  <!-- CSS & JS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>                   
+  <script type="text/javascript" src="css/overlaypopup.js"></script>  
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
 
-
   <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-
 </head>
 <body>
 
 <nav class="navbar">
-      <div class="container nav_pad">  
-        <ul>
-         <li><a class="navbar-link" href="index.html">Main</a></li>
-         <li><a class="navbar-link" href="p1.html"> Project 1</a></li>
-         <li><a class="navbar-link" href="p2.html"> Project 2</a></li>
-         <li><a class="navbar-link" href="p3.html"> Project 3</a></li>
-        </ul>
-      </div>     
+  <div class="container nav_pad">  
+    <ul>
+      <li><a class="navbar-link" href="index.html">Main</a></li>
+      <li><a class="navbar-link" href="p1.html">3D Projects</a></li>
+      <li><a class="navbar-link" href="p2.html">Exhibits</a></li>
+      <li><a class="navbar-link" href="p3.html">Contacts</a></li>
+    </ul>
+  </div>     
 </nav>
 
+<!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container">
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-
-  
-    <div class="row section">
-
-        <header id="header" class="twelve columns">
-        <h3>Hanz Pacheco</h3>
-
-            <div class="statement_text"> 
-            <em>
-            
-              
-              “My mama always used to tell me, 'If you can't find somethin' to live for, you best find somethin' to die for.” - Tupac 
-            </em>
-            <br>
-            </div>
-
-        </header>
-
-
-    </div>
-
-      
-      <div class="row section">
-          
-        <div class="twelve columns">
-        <!-- project 1 /////////////////-->
-         <h5>{Project 1}</h5>
-		 <p>
-		(Exercise 1: Wild Wallpaper)<br>
-    (Exercise 2: Snap to Grid)<br>
-    (Project 1: Drawing Software)<br>
-        
-                            
-               <a href="p1.html" >Go to Project 1</a> <br>       
-        
-         </p>
-      <!-- project 2/////////////////-->
-         <h5>{Project 2}</h5>
-		 <p>
-    (Exercise 4: Creatures are)<br>
-    (Exercise 5: Industrious Code)<br>
-    (Project 2: Animation Sequence)<br>
-        
-    <a href="p2.html" >Go to Project 2</a> <br> 
-     
-<!-- project 3 /////////////////-->
-    <h5>Project 3</h5>
-    <p>
-   (Phase 1: Data & GridArray Mapping )<br>
-   (Exercise 2 )<br>
-   (Project 3 )<br>
-       
-   <a href="p3.html" >Go to Project 3</a> <br> 
-  </div>
- 
-      
-    </div>
-
-   
+  <div class="row section">
+    <header id="header" class="twelve columns">
+      <h3>Hanz Pacheco</h3>
+      <div class="statement_text"> 
+        <em>3D Artist/Environments/Props</em><br>
+      </div>
+    </header>
   </div>
 
-    
-    <!-- end of MAIN container /////////////////-->
-	
-    
-   
+  <!-- Add YouTube Video Slider for DemoReel -->
+  <div class="row section">
+    <div class="twelve columns">
+      <h5>DemoReel</h5>
+      <div class="demo-reel-video-slider">
+        <div class="slider-container" style="max-width: 100%; margin: 20px auto; position: relative;">
+          <div class="slider">
+            <!-- Embed YouTube Videos -->
+            <iframe width="100%" height="515" src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="515" src="https://www.youtube.com/embed/YOUR_VIDEO_ID2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="515" src="https://www.youtube.com/embed/YOUR_VIDEO_ID3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <!-- Navigation Arrows -->
+          <button class="prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; cursor: pointer;">&#9664;</button>
+          <button class="next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; cursor: pointer;">&#9654;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DemoReel Section with Image Slider for 3D Projects -->
+  <h5>3D Projects</h5>
+  <div class="demo-reel-gallery">
+    <div class="slider-container" style="max-width: 80%;">
+      <div class="slider">
+        <img src="images/gasstation.png" alt="Demo Reel Image 1">
+        <img src="images/lake.png" alt="Demo Reel Image 2">
+        <img src="images/medieval.png" alt="Demo Reel Image 3">
+        <img src="images/snowstorm.png" alt="Demo Reel Image 4">
+        <img src="images/scifibuilding.png" alt="Demo Reel Image 5">
+        <img src="images/hallway.png" alt="Demo Reel Image 6">
+      </div>
+      <!-- Navigation Arrows -->
+      <button class="prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; cursor: pointer;">&#9664;</button>
+      <button class="next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; cursor: pointer;">&#9654;</button>
+    </div>
+    <div style="text-align: left; margin-top: 10px;">
+      <a href="p1.html">Go to 3D Projects</a>
+    </div>
+  </div>
+
+</div> <!-- end of MAIN container -->
+
+<script>
+  $(document).ready(function () {
+    // Reusable slider setup function
+    function setupSlider(sliderContainer) {
+      let index = 0;
+      const slides = sliderContainer.find("iframe, img");
+      const totalSlides = slides.length;
+
+      // Hide all slides except the first one
+      slides.hide().eq(index).show();
+
+      // Function to show the next slide
+      function showNextSlide() {
+        slides.eq(index).fadeOut(300);
+        index = (index + 1) % totalSlides;
+        slides.eq(index).fadeIn(300);
+      }
+
+      // Function to show the previous slide
+      function showPrevSlide() {
+        slides.eq(index).fadeOut(300);
+        index = (index - 1 + totalSlides) % totalSlides;
+        slides.eq(index).fadeIn(300);
+      }
+
+      // Event listeners for navigation buttons
+      sliderContainer.find(".next").on("click", showNextSlide);
+      sliderContainer.find(".prev").on("click", showPrevSlide);
+    }
+
+    // Initialize the video slider
+    $(".demo-reel-video-slider .slider-container").each(function () {
+      setupSlider($(this));
+    });
+
+    // Initialize the image slider for 3D Projects
+    $(".demo-reel-gallery .slider-container").each(function () {
+      setupSlider($(this));
+    });
+  });
+</script>
+
 </body>
 </html>
