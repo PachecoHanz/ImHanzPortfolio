@@ -6,8 +6,8 @@
   <title>3D Artist Portfolio</title>
 
   <!-- CSS & JS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>                   
-  <script type="text/javascript" src="css/overlaypopup.js"></script>  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script type="text/javascript" src="css/overlaypopup.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -17,15 +17,21 @@
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="container nav_pad">  
-    <ul>
-      <li><a class="navbar-link" href="index.html">Main</a></li>
-      <li><a class="navbar-link" href="p1.html">3D Projects</a></li>
-      <li><a class="navbar-link" href="p2.html">Exhibits</a></li>
-      <li><a class="navbar-link" href="p3.html">Contacts</a></li>
+<!-- Navbar -->
+<nav class="navbar" style="background-color: #333; padding: 10px; display: flex; align-items: center; justify-content: space-between;">
+  <div class="container nav_pad" style="display: flex; align-items: center; width: 100%;">
+    <!-- Header Box -->
+    <div class="navbar-header" style="color: white; font-size: 1.5rem; font-weight: bold; margin-right: auto; padding: 0 10px;">
+      <span>Hanz Pacheco</span>
+    </div>
+    <!-- Navigation Links -->
+    <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+      <li style="margin: 0 10px;"><a class="navbar-link" href="index.html" style="color: white; text-decoration: none;">Main</a></li>
+      <li style="margin: 0 10px;"><a class="navbar-link" href="p1.html" style="color: white; text-decoration: none;">3D Projects</a></li>
+      <li style="margin: 0 10px;"><a class="navbar-link" href="p2.html" style="color: white; text-decoration: none;">Exhibits</a></li>
+      <li style="margin: 0 10px;"><a class="navbar-link" href="p3.html" style="color: white; text-decoration: none;">Contacts</a></li>
     </ul>
-  </div>     
+  </div>
 </nav>
 
 <!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -33,9 +39,9 @@
 
   <div class="row section">
     <header id="header" class="twelve columns">
-      <h3>Hanz Pacheco</h3>
-      <div class="statement_text"> 
-        <em>3D Artist/Environments/Props</em><br>
+      <h3>3D Modeling</h3>
+      <div class="statement_text">
+        <em>Blender was used to create these scenes</em><br>
       </div>
     </header>
   </div>
@@ -43,7 +49,7 @@
   <!-- Add YouTube Video Slider for DemoReel -->
   <div class="row section">
     <div class="twelve columns">
-      <h5>DemoReel</h5>
+      <h5>Showreel</h5>
       <div class="demo-reel-video-slider">
         <div class="slider-container" style="max-width: 100%; margin: 20px auto; position: relative;">
           <div class="slider">
@@ -61,7 +67,7 @@
   </div>
 
   <!-- DemoReel Section with Image Slider for 3D Projects -->
-  <h5>3D Projects</h5>
+  <h5>Featured 3D Projects</h5>
   <div class="demo-reel-gallery">
     <div class="slider-container" style="max-width: 80%;">
       <div class="slider">
@@ -77,11 +83,25 @@
       <button class="next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; cursor: pointer;">&#9654;</button>
     </div>
     <div style="text-align: left; margin-top: 10px;">
-      <a href="p1.html">Go to 3D Projects</a>
+      <a href="p1.html"> See More</a>
     </div>
   </div>
 
 </div> <!-- end of MAIN container -->
+
+<br>
+
+<!-- Footer Section -->
+<footer style="background-color: #333; color: white; padding: 20px; text-align: center; margin-top: 20px;">
+  <div class="container">
+    <p>&copy; 2024 Hanz Pacheco. All Rights Reserved.</p>
+    <p>
+      <a href="https://www.linkedin.com/in/hanzpacheco" target="_blank" style="color: white; text-decoration: underline;">LinkedIn</a> |
+      <a href="https://github.com/hanzpacheco" target="_blank" style="color: white; text-decoration: underline;">GitHub</a> |
+      <a href="p3.html" style="color: white; text-decoration: underline;">Contact</a>
+    </p>
+  </div>
+</footer>
 
 <script>
   $(document).ready(function () {
