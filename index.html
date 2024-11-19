@@ -54,7 +54,7 @@
         <div class="slider-container" style="max-width: 100%; margin: 20px auto; position: relative;">
           <div class="slider">
             <!-- Embed YouTube Videos -->
-            <iframe width="100%" height="515" src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%%" height="515" src="https://www.youtube.com/embed/GXMyV4_yq4s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <iframe width="100%" height="515" src="https://www.youtube.com/embed/YOUR_VIDEO_ID2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <iframe width="100%" height="515" src="https://www.youtube.com/embed/YOUR_VIDEO_ID3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -104,45 +104,58 @@
 </footer>
 
 <script>
-  $(document).ready(function () {
-    // Reusable slider setup function
-    function setupSlider(sliderContainer) {
-      let index = 0;
-      const slides = sliderContainer.find("iframe, img");
-      const totalSlides = slides.length;
+ $(document).ready(function () {
+  // Reusable slider setup function
+  function setupSlider(sliderContainer) {
+    let index = 0;
+    const slides = sliderContainer.find("iframe, img");
+    const totalSlides = slides.length;
 
-      // Hide all slides except the first one
-      slides.hide().eq(index).show();
-
-      // Function to show the next slide
-      function showNextSlide() {
-        slides.eq(index).fadeOut(300);
-        index = (index + 1) % totalSlides;
-        slides.eq(index).fadeIn(300);
+    // Determine the maximum height of all slides
+    let maxHeight = 0;
+    slides.each(function () {
+      const currentHeight = $(this).outerHeight();
+      if (currentHeight > maxHeight) {
+        maxHeight = currentHeight;
       }
+    });
 
-      // Function to show the previous slide
-      function showPrevSlide() {
-        slides.eq(index).fadeOut(300);
-        index = (index - 1 + totalSlides) % totalSlides;
-        slides.eq(index).fadeIn(300);
-      }
+    // Set a fixed height for the slider container
+    sliderContainer.css("height", maxHeight + "px");
 
-      // Event listeners for navigation buttons
-      sliderContainer.find(".next").on("click", showNextSlide);
-      sliderContainer.find(".prev").on("click", showPrevSlide);
+    // Hide all slides except the first one
+    slides.hide().eq(index).show();
+
+    // Function to show the next slide
+    function showNextSlide() {
+      slides.eq(index).fadeOut(300);
+      index = (index + 1) % totalSlides;
+      slides.eq(index).fadeIn(300);
     }
 
-    // Initialize the video slider
-    $(".demo-reel-video-slider .slider-container").each(function () {
-      setupSlider($(this));
-    });
+    // Function to show the previous slide
+    function showPrevSlide() {
+      slides.eq(index).fadeOut(300);
+      index = (index - 1 + totalSlides) % totalSlides;
+      slides.eq(index).fadeIn(300);
+    }
 
-    // Initialize the image slider for 3D Projects
-    $(".demo-reel-gallery .slider-container").each(function () {
-      setupSlider($(this));
-    });
+    // Event listeners for navigation buttons
+    sliderContainer.find(".next").on("click", showNextSlide);
+    sliderContainer.find(".prev").on("click", showPrevSlide);
+  }
+
+  // Initialize the video slider
+  $(".demo-reel-video-slider .slider-container").each(function () {
+    setupSlider($(this));
   });
+
+  // Initialize the image slider for 3D Projects
+  $(".demo-reel-gallery .slider-container").each(function () {
+    setupSlider($(this));
+  });
+});
+
 </script>
 
 </body>
