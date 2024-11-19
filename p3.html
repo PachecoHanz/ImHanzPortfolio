@@ -7,7 +7,6 @@
 
   <!-- CSS & JS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-  <script type="text/javascript" src="css/overlaypopup.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -35,36 +34,44 @@
 </nav>
 
 <!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div class="container">
+<div class="container" style="margin-top: 30px;">
 
   <div class="row section">
-    <header id="header" class="twelve columns">
-      <h3>Art Exhibits</h3>
+    <header id="header" class="twelve columns" style="text-align: center;">
+      <h3>Contact Me</h3>
       <div class="statement_text">
-        <em>Digital Media Art shows and local Exhibits</em><br>
+        <em>Get to as an artist behind the work</em><br>
       </div>
     </header>
   </div>
 
-  <!-- DemoReel Section with Image Slider for 3D Projects -->
-  <h5>Featured 3D Projects</h5>
-  <div class="demo-reel-gallery">
-    <div class="slider-container" style="max-width: 80%;">
-      <div class="slider">
-        <img src="images/gasstation.png" alt="Demo Reel Image 1">
-        <img src="images/lake.png" alt="Demo Reel Image 2">
-        <img src="images/medieval.png" alt="Demo Reel Image 3">
-        <img src="images/snowstorm.png" alt="Demo Reel Image 4">
-        <img src="images/scifibuilding.png" alt="Demo Reel Image 5">
-        <img src="images/hallway.png" alt="Demo Reel Image 6">
-      </div>
-      <!-- Navigation Arrows -->
-      <button class="prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; cursor: pointer;">&#9664;</button>
-      <button class="next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; cursor: pointer;">&#9654;</button>
+  <!-- Artist Section -->
+  <div class="artist-section" style="display: flex; align-items: center; justify-content: center; margin-top: 20px; gap: 30px;">
+    <!-- Artist Statement -->
+    <div class="artist-statement" style="max-width: 70%; font-size: 2rem; line-height: 1.6; text-align: left;">
+      <p>
+        Hello! I'm Hanz Pacheco, a Filipino 3D artist based in San Francisco, California. 
+        I always strive to create environments that tell stories rich with textures, light, and intricate details 
+        that have evolved organically over time. Each process merges technical skill with an artistic sensibility, 
+        allowing me to build immersive worlds that aren’t just visually engaging but evoke a sense of place and atmosphere.
+
+      </p>
     </div>
-    <div style="text-align: left; margin-top: 10px;">
-      <a href="p1.html"> See More</a>
+    <!-- Profile Picture -->
+    <div class="artist-image">
+      <img src="images/contactimg.png" alt="Hanz Pacheco" style="border-radius: 50%; width: 250px; height: 250px; object-fit: cover;">
     </div>
+  </div>
+
+  <!-- Social Media Links -->
+  <div class="social-media-links" style="text-align: center; margin-top: 30px;">
+    <h5>Connect with me:</h5>
+    <p>
+      <a href="https://www.linkedin.com/in/hanz-pacheco-774638155" target="_blank" style="margin: 0 10px; color: #0077b5; text-decoration: underline;">LinkedIn</a>
+      <a href="https://www.instagram.com/hanzarts" target="_blank" style="margin: 0 10px; color: #E1306C; text-decoration: underline;">Instagram</a>
+      <a href="https://www.youtube.com/@hanzpacheco7266" target="_blank" style="margin: 0 10px; color: #FF0000; text-decoration: underline;">YouTube</a>
+      <a href="https://www.artstation.com/hanzarts" target="_blank" style="margin: 0 10px; color: #13aff0; text-decoration: underline;">ArtStation</a>
+    </p>
   </div>
 
 </div> <!-- end of MAIN container -->
@@ -82,61 +89,6 @@
     </p>
   </div>
 </footer>
-
-<script>
- $(document).ready(function () {
-  // Reusable slider setup function
-  function setupSlider(sliderContainer) {
-    let index = 0;
-    const slides = sliderContainer.find("iframe, img");
-    const totalSlides = slides.length;
-
-    // Determine the maximum height of all slides
-    let maxHeight = 0;
-    slides.each(function () {
-      const currentHeight = $(this).outerHeight();
-      if (currentHeight > maxHeight) {
-        maxHeight = currentHeight;
-      }
-    });
-
-    // Set a fixed height for the slider container
-    sliderContainer.css("height", maxHeight + "px");
-
-    // Hide all slides except the first one
-    slides.hide().eq(index).show();
-
-    // Function to show the next slide
-    function showNextSlide() {
-      slides.eq(index).fadeOut(300);
-      index = (index + 1) % totalSlides;
-      slides.eq(index).fadeIn(300);
-    }
-
-    // Function to show the previous slide
-    function showPrevSlide() {
-      slides.eq(index).fadeOut(300);
-      index = (index - 1 + totalSlides) % totalSlides;
-      slides.eq(index).fadeIn(300);
-    }
-
-    // Event listeners for navigation buttons
-    sliderContainer.find(".next").on("click", showNextSlide);
-    sliderContainer.find(".prev").on("click", showPrevSlide);
-  }
-
-  // Initialize the video slider
-  $(".demo-reel-video-slider .slider-container").each(function () {
-    setupSlider($(this));
-  });
-
-  // Initialize the image slider for 3D Projects
-  $(".demo-reel-gallery .slider-container").each(function () {
-    setupSlider($(this));
-  });
-});
-
-</script>
 
 </body>
 </html>
