@@ -6,7 +6,10 @@
   <title>3D Artist Portfolio</title>
 
   <!-- CSS & JS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <!-- Use latest jQuery version with HTTPS for security -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Make sure the paths are correct for your project structure -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -224,61 +227,54 @@
         <img src="images/braintechimg.png" alt="Sci-Fi Building">
       </div>
     </div>
-    </div>
   </div>
 </div>
 
 <!-- Modal -->
-<div id="modal" class="modal">
+<div class="modal" id="modal">
   <div class="modal-content">
     <span class="close-btn">&times;</span>
-    <img id="modal-main-image" src="" alt="Expanded View">
-    <div class="modal-gallery"></div>
+    <img id="modal-img" src="" alt="">
+    <div class="modal-gallery">
+      <img src="images/outoftime.png" alt="">
+      <img src="images/future1.png" alt="">
+      <img src="images/fashion.png" alt="">
+    </div>
   </div>
 </div>
 
-<br>
-<br>
-
-<!-- Footer Section -->
+<!-- Footer -->
 <footer>
-  <div class="container nav_pad">
-    <p>&copy; 2024 Hanz Pacheco. All Rights Reserved.</p>
-    <p>
-      <a href="https://www.linkedin.com/in/hanz-pacheco-774638155" target="_blank">LinkedIn</a> |
-      <a href="https://gmail.com/17pacheco28@gmail.com" target="_blank">Email Me</a> |
-      <a href="p3.html">Contact</a>
-    </p>
-  </div>
+  <p>For inquiries, contact me at: <a href="mailto:hanz.pacheco@gmail.com">hanz.pacheco@gmail.com</a></p>
+  <p>Find more: <a href="https://www.linkedin.com/in/hanzpacheco">LinkedIn</a></p>
 </footer>
 
 <script>
-  // Modal Logic
-  const modal = $("#modal");
-  const mainImage = $("#modal-main-image");
-  const modalGallery = $(".modal-gallery");
+  $(document).ready(function() {
+    $(".gallery-image img").click(function() {
+      const imgSrc = $(this).attr("src");
+      const versions = JSON.parse($(this).parent().attr("data-versions"));
+      $("#modal-img").attr("src", imgSrc);
 
-  $(".gallery-image").on("click", function () {
-    const versions = $(this).data("versions");
-    mainImage.attr("src", versions[0]);
-    modalGallery.empty();
-    versions.forEach((src, index) => {
-      const thumb = $(`<img src="${src}" data-index="${index}">`);
-      if (index === 0) thumb.addClass("active");
-      modalGallery.append(thumb);
+      // Change modal images based on versions
+      $(".modal-gallery img").each(function(index) {
+        $(this).attr("src", versions[index]);
+      });
+
+      // Show the modal
+      $("#modal").fadeIn();
     });
-    modal.fadeIn();
-  });
 
-  modal.on("click", ".modal-gallery img", function () {
-    const src = $(this).attr("src");
-    mainImage.attr("src", src);
-    modalGallery.find("img").removeClass("active");
-    $(this).addClass("active");
-  });
+    $(".modal .close-btn").click(function() {
+      $("#modal").fadeOut();
+    });
 
-  $(".close-btn").on("click", function () {
-    modal.fadeOut();
+    $(".modal-gallery img").click(function() {
+      const newSrc = $(this).attr("src");
+      $("#modal-img").attr("src", newSrc);
+      $(".modal-gallery img").removeClass("active");
+      $(this).addClass("active");
+    });
   });
 </script>
 
