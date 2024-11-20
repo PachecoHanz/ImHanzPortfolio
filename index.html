@@ -102,28 +102,44 @@
       const slides = sliderContainer.find("iframe, img");
       const totalSlides = slides.length;
 
+      // Calculate the maximum height of all slides and set it for the container
+      let maxHeight = 0;
+      slides.each(function () {
+        const currentHeight = $(this).outerHeight();
+        if (currentHeight > maxHeight) {
+          maxHeight = currentHeight;
+        }
+      });
+      sliderContainer.css("height", maxHeight + "px");
+
+      // Hide all slides except the first one
       slides.hide().eq(index).show();
 
+      // Function to show the next slide
       function showNextSlide() {
         slides.eq(index).fadeOut(300);
         index = (index + 1) % totalSlides;
         slides.eq(index).fadeIn(300);
       }
 
+      // Function to show the previous slide
       function showPrevSlide() {
         slides.eq(index).fadeOut(300);
         index = (index - 1 + totalSlides) % totalSlides;
         slides.eq(index).fadeIn(300);
       }
 
+      // Event listeners for navigation buttons
       sliderContainer.find(".next").on("click", showNextSlide);
       sliderContainer.find(".prev").on("click", showPrevSlide);
     }
 
+    // Initialize the video slider
     $(".demo-reel-video-slider .slider-container").each(function () {
       setupSlider($(this));
     });
 
+    // Initialize the image slider for 3D Projects
     $(".demo-reel-gallery .slider-container").each(function () {
       setupSlider($(this));
     });
