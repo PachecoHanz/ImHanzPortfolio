@@ -43,36 +43,59 @@
 
 /* Modal Content */
 .modal-content {
-  display: flex; /* Flexbox for layout */
+  display: flex;
   flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center all elements horizontally */
-  justify-content: space-between; /* Space elements evenly */
+  align-items: center;
+  justify-content: space-between; /* Keep the gallery at the bottom */
   width: 90%; /* Adjust width as needed */
   max-height: 90%; /* Ensure content does not exceed screen height */
   padding: 20px;
   border-radius: 0px;
   box-sizing: border-box;
   overflow: hidden;
+  position: relative; /* Ensure positioning for absolute elements */
 }
-
 /* Modal Image */
 .modal img {
   width: auto; /* Allow the image to maintain aspect ratio */
-  max-width: 70%; /* Prevent horizontal overflow */
-  max-height: 70%; /* Cap height to fit within modal */
+  max-width: 90%; /* Prevent horizontal overflow */
+  max-height: 70%; /* Cap height to ensure space for the gallery */
   object-fit: contain; /* Preserve aspect ratio */
-  margin: 0;
+  margin: 0 auto;
+  display: block;
+  overflow: auto; /* Enable scroll if necessary */
 }
 
-/* Modal Gallery */
 .modal-gallery {
   display: flex;
-  gap: 50px;
-  justify-content: center; /* Center the thumbnails */
-  flex-wrap: wrap; /* Wrap thumbnails if needed */
-  width: 100%; /* Full width for the gallery */
-  max-height: 20%; /* Limit gallery height */
-  overflow-y: auto; /* Enable scrolling if thumbnails exceed height */
+  gap: 2px; /* Reduce spacing between thumbnails */
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%; /* Full width for alignment */
+  max-height: 15%; /* Limit the height of the gallery */
+  overflow-y: auto; /* Allow scrolling if needed */
+  position: absolute; /* Position within the modal */
+  bottom: 10px; /* Place closer to the bottom of the modal */
+  left: 0;
+  padding: 0; /* Remove extra padding */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.modal-gallery img {
+  width: 60px; /* Thumbnail size */
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  margin: 0; /* Remove extra margin */
+}
+
+/* Highlight active or hovered thumbnail */
+.modal-gallery img:hover,
+.modal-gallery img.active {
+  border-color: white;
 }
 
 /* Gallery Thumbnails */
@@ -244,7 +267,15 @@
     </header>
   </div>
   
+
   <div class="gallery">
+    <!-- Gallery Item 1 -->
+    <div class="gallery-item">
+      <div class="gallery-image" data-versions='["assets/fridge/fridge1.png",  "assets/fridge/fridge4.png" , "assets/fridge/fridge2.png", "assets/fridge/fridge3.png" , "assets/fridge/fridge5.png"]'>
+        <img src="assets/fridge/fridge1.1.png" alt="comp">
+      </div>
+    </div>
+
       <!-- Gallery Item 1 -->
       <div class="gallery-item">
         <div class="gallery-image" data-versions='["assets/comp/comp1.jpg", "assets/comp/comp2.jpg", "assets/comp/comp3.jpg", "assets/comp/comp4.jpg" , "assets/comp/comp5.jpg", "assets/comp/comp6.jpg" , "assets/comp/comp7.jpg", "assets/comp/comp8.jpg"]'>
