@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D Artist Portfolio</title>
 
-  <!-- CSS & JS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- CSS & JS –––––––––––––––––––––––––––––––––––––––––––––––––– -->  <!-- I use css mainly for padding and container not for modal and galleries –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
@@ -13,7 +13,9 @@
 
   <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <style>
+  
+  <!--  this is for the modal container you can add this to css but I just like so it is easily accessible ––––––––––––––––––––––––––––– -->
+  <style> 
     /* Body & Container */
     body {
       display: flex;
@@ -173,6 +175,7 @@
   </style>
 </head>
 <body>
+  <!--  end of style container––––––––––––––––––––––––––––– -->
 
 <!-- Navbar -->
 <nav class="navbar" style="background-color: #333; padding: 10px; display: flex; align-items: center; justify-content: space-between;">
@@ -335,10 +338,11 @@
 
   <br>   <!-- just of spacing you can remove it -->
 
- </div>
- <!-- end of MAIN container/ this might mess --> 
+ 
+</div>
+</div> <!-- end of MAIN container/ this might mess up the footer container if you remove this div --> 
 
-<br>
+<br> <!-- just of spacing you can remove it -->
 
 
 <!-- Footer Section -->
@@ -363,7 +367,13 @@
 </div>
 
 
-<script>
+<!-- End of Footer Section -->
+
+
+
+
+<!-- This is the script for the modal and gallery function-->
+<script> 
  // Modal functionality
 const modal = document.querySelector('.modal');
 const modalImage = document.querySelector('.modal-image');
@@ -426,6 +436,7 @@ document.addEventListener('fullscreenchange', () => {
     console.log('Exited full-screen mode');
   }
 });
+
 </script>
 
 
